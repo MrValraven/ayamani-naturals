@@ -1,0 +1,83 @@
+@use "../../styles/colors";
+
+header {
+  padding: 0px 25px;
+  margin: 0 50px;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid darken(colors.$backgroundColor, 10%);
+
+  .logo {
+    display: flex;
+    align-items: center;
+
+    img {
+      height: 5vh;
+    }
+
+    p {
+      font-weight: 600;
+    }
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    li {
+      font-weight: 500;
+      cursor: pointer;
+    }
+  }
+
+  .icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    img {
+      width: 50px;
+      padding: 10px;
+      border-radius: 50%;
+      transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+      &:hover {
+        cursor: pointer;
+        background-color: darken(colors.$backgroundColor, 5%);
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  header {
+    margin: 0px 10px;
+    padding: 0;
+    .logo {
+      p {
+        display: none;
+      }
+    }
+
+    nav {
+      ul {
+        gap: 10px;
+        li a {
+          opacity: 0.9;
+          font-size: 16px;
+        }
+      }
+    }
+
+    .userIcon {
+      display: none;
+    }
+  }
+}
